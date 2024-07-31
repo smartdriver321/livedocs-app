@@ -5,6 +5,7 @@ import { dark } from '@clerk/themes'
 
 import '../styles/globals.css'
 import { cn } from '@/lib/utils'
+import Provider from './Provider'
 
 const fontSans = FontSans({
 	subsets: ['latin'],
@@ -38,7 +39,7 @@ export default function RootLayout({
 						fontSans.variable
 					)}
 				>
-					{children}
+					<Provider>{children}</Provider>
 				</body>
 			</html>
 		</ClerkProvider>
