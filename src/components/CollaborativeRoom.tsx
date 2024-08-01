@@ -15,9 +15,9 @@ import { Input } from './ui/input'
 export default function CollaborativeRoom({
 	roomId,
 	roomMetadata,
+	users,
+	currentUserType,
 }: CollaborativeRoomProps) {
-	const currentUserType = 'editor'
-
 	const containerRef = useRef<HTMLDivElement>(null)
 	const inputRef = useRef<HTMLDivElement>(null)
 
@@ -124,7 +124,7 @@ export default function CollaborativeRoom({
 						</div>
 					</Header>
 
-					<Editor />
+					<Editor roomId={roomId} currentUserType={currentUserType} />
 				</div>
 			</ClientSideSuspense>
 		</RoomProvider>
