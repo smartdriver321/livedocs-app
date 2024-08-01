@@ -11,6 +11,7 @@ import Header from '@/components/Header'
 import Loader from './Loader'
 import ActiveCollaborators from './ActiveCollaborators'
 import { Input } from './ui/input'
+import ShareModal from './ShareModal'
 
 export default function CollaborativeRoom({
 	roomId,
@@ -115,6 +116,13 @@ export default function CollaborativeRoom({
 
 						<div className='flex w-full flex-1 justify-end gap-2 sm:gap-3'>
 							<ActiveCollaborators />
+
+							<ShareModal
+								roomId={roomId}
+								collaborators={users}
+								creatorId={roomMetadata.creatorId}
+								currentUserType={currentUserType}
+							/>
 							<SignedOut>
 								<SignInButton />
 							</SignedOut>
