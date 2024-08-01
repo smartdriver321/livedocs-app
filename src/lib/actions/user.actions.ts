@@ -39,12 +39,14 @@ export const getDocumentUsers = async ({
 }) => {
 	try {
 		const room = await liveblocks.getRoom(roomId)
+
 		const users = Object.keys(room.usersAccesses).filter(
 			(email) => email !== currentUser
 		)
 
 		if (text.length) {
 			const lowerCaseText = text.toLowerCase()
+
 			const filteredUsers = users.filter((email: string) =>
 				email.toLowerCase().includes(lowerCaseText)
 			)
