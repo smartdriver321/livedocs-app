@@ -12,6 +12,7 @@ import Loader from './Loader'
 import ActiveCollaborators from './ActiveCollaborators'
 import { Input } from './ui/input'
 import ShareModal from './ShareModal'
+import Notifications from './Notifications'
 
 export default function CollaborativeRoom({
 	roomId,
@@ -123,6 +124,9 @@ export default function CollaborativeRoom({
 								creatorId={roomMetadata.creatorId}
 								currentUserType={currentUserType}
 							/>
+
+							<Notifications />
+
 							<SignedOut>
 								<SignInButton />
 							</SignedOut>
