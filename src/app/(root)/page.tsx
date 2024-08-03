@@ -8,6 +8,7 @@ import { getDocuments } from '@/lib/actions/room.actions'
 import { dateConverter } from '@/lib/utils'
 import Header from '@/components/Header'
 import AddDocumentBtn from '@/components/AddDocumentBtn'
+import { DeleteModal } from '@/components/DeleteModal'
 
 export default async function Home() {
 	const clerkUser = await currentUser()
@@ -61,7 +62,7 @@ export default async function Home() {
 										</p>
 									</div>
 								</Link>
-								DeleteModal
+								<DeleteModal roomId={id} />
 							</li>
 						))}
 					</ul>
